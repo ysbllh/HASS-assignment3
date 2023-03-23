@@ -10,16 +10,10 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     padding: 10px;
-    width: 80%
+    width: 60%;
+    text-align: center;
 }
 
-#countries {
-    fill-opacity: 0.8;
-    background-color: var(--bg1);
-    stroke: var(--strk);
-    stroke-width: 0.9;
-    cursor: pointer;
-}
 
 .tooltip {
     position: absolute;
@@ -32,4 +26,6 @@ html {
 
 h2 {
     color:darkslategray;
+    text-align: left;
+    line-height: 1.5;
 }
