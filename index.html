@@ -19,11 +19,16 @@
     <h2> Design, Build and Sell Scheme (DBSS) flats were introduced by HDB in 2005.<br>
          DBSS projects are developed by private developers, and thus have more unique features than regular HDBs. <br>
         There are a total of 13 DBSS projects to date, before the scheme was discontinued in 2012. <br>
-        As the flats were built around the same time period, 
+        As the flats were built around the same time period, the remaining lease is around the same.
         
         <ul>1) What are the DBSS transactions like from 2017-2023?</ul> 
         <ul>2) Does distance of HDB town from CBD influence the price of HDB flats? <span style = "color: blue";>Ans: Probably. </span></ul> 
         <ul>3) Where are the million dollar DBSS flats found? <span style = "color: blue";>Ans: In the first 5 towns </span></ul>
+
+    Jitter violin plot is used to visualise the data as it can be used to visualise both the individual transactions and distribution of numeric resale price data. <br>
+    Towns are ranked according to distance from CBD. <br>
+    Coloured jitter is used to visualise the relationship between the (continuous)price and the categorical(town),
+    where a lighter colour would help readers identify which are million dollar flats. 
 
     </h2>
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -34,7 +39,7 @@
 
 // set the dimensions and margins of the graph
 const margin = {top: 10, right: 30, bottom: 30, left: 60},
-        width = 2000 - margin.left - margin.right,
+        width = 1500 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -44,8 +49,6 @@ const svg = d3.select("#my_dataviz")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`); 
-
-   
 
 d3.csv("https://raw.githubusercontent.com/ysbllh/HASS-assignment3/main/dbss.csv", function(data) {
 
@@ -116,9 +119,6 @@ svg
           .y(function(d){ return(y(d.x0)) } )
           .curve(d3.curveCatmullRom)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
       )
-
-    
-
 // Add individual points with jitter
 var jitterWidth = 40
 svg
@@ -136,31 +136,10 @@ svg
         .attr("stroke", "black")
         .attr("stroke-width", 2)
     }) 
-
-chart
-    .append("text")
-    .attr("transform", "translate(" + (width / 2) + "," + (height + 40) + ")")
-    .text("X-axis label")
-    .attr("text-align", "middle");
-
-chart
-    .append("text")
-    .attr("transform", "translate(-40, " + (height / 2) + ") rotate(-90)")
-    .text("Y-axis label")
-    .attr("text-align", "middle");
-
+ 
 })
-
 </script>
 
-
-<h2>Jitter violin plot is used to visualise the data as it can be used to visualise both the individual transactions and distribution of numeric resale price data. <br>
-    Towns are ranked according to distance from CBD. <br>
-    Coloured jitter is used to visualise the relationship between the (continuous)price and the categorical(town),
-    where a more yellow-colour would help readers identify which are million dollar flats. 
-
-
-</h2>
 
 
 </body>
