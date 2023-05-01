@@ -1,31 +1,24 @@
-body,
-html {
-    --bg0: #d1f5ef;
-    --bg1: #777777;
-    --fg0: #00000a;
-    --strk: #ffffff;
-    margin: 0;
-    background: var(--bg0);
-    color: var(--fg0);
+body,html {
+background: #d1f5ef;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     padding: 10px;
-    width: 80%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    width: 95%;
+    text-align: justify;
+}
+
+
+h1{
+    font-size: 22px;
     text-align: center;
 }
-
-
-.tooltip {
-    position: absolute;
-    text-align: left;
-    margin-top: -10px;
-    background: var(--strk);
-    color: var(--fg0);
-}
-
 
 h2 {
     color:darkslategray;
     text-align: left;
     line-height: 1.5;
+    font-size: 16px;
 }
